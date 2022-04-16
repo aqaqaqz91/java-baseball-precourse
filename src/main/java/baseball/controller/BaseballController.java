@@ -10,7 +10,7 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 public class BaseballController {
     public void start(){
         playBall();
-        endGame();
+        restartGame();
     }
 
     private void playBall(){
@@ -26,7 +26,7 @@ public class BaseballController {
         BaseballUI.printClearMsg();
     }
 
-    private void endGame(){
+    private void restartGame(){
         BaseballUI.printRestartMsg();
 
         String restart = readLine();
