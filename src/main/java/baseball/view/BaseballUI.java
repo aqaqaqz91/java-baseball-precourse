@@ -15,8 +15,8 @@ public class BaseballUI {
         }
 
         System.out.println(
-                (ballCount.getStrike()>0 ? ballCount.getStrike()+Const.STRIKE : "")
-                +(ballCount.getBall()>0 ? ballCount.getBall()+Const.BALL : "")
+                (ballCount.getBall()>0 ? ballCount.getBall()+Const.BALL+" " : "")
+                + (ballCount.getStrike()>0 ? ballCount.getStrike()+Const.STRIKE : "")
         );
     }
 

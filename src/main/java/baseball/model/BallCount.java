@@ -1,5 +1,7 @@
 package baseball.model;
 
+import baseball.common.Const;
+
 public class BallCount {
     private final int MAX_COUNT = 3;
 
@@ -12,6 +14,10 @@ public class BallCount {
     }
 
     public void throwBall(String input, String answer){
+        if(input.length() > MAX_COUNT) {
+            throw new IllegalArgumentException(Const.INVALID_USER_INPUT);
+        }
+
         strike = 0;
         ball = 0;
         for(int i=0;i<MAX_COUNT;i++){
