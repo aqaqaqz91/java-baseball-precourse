@@ -4,7 +4,7 @@ import java.util.LinkedHashSet;
 
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
-public class Answer {
+public class Computer {
     private static final int NUM_LENGTH = 3;
     private static final int NUM_START = 1;
     private static final int NUM_END = 9;
