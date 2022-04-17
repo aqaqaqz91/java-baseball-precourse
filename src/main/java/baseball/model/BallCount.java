@@ -14,7 +14,8 @@ public class BallCount {
     }
 
     public void throwBall(String input, String answer){
-        if(input.length() > MAX_COUNT) {
+        if(!userInputValidationCheck(input)) {
+            System.out.println(input);
             throw new IllegalArgumentException(Const.INVALID_USER_INPUT);
         }
 
@@ -23,6 +24,14 @@ public class BallCount {
         for(int i=0;i<MAX_COUNT;i++){
             makeBallCount(input, answer, i);
         }
+    }
+
+    private boolean userInputValidationCheck(String input){
+        if(input.length() != MAX_COUNT) return false;
+
+        if(input.matches("(.*)[^1-9](.*)")) return false;
+
+        return true;
     }
 
     private void makeBallCount(String input, String answer, int p){
