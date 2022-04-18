@@ -11,13 +11,13 @@ public class Computer {
     private static String answer = "";
 
     public static void initAnswer(){
-        LinkedHashSet<String> hashSet = new LinkedHashSet<>();
-        while(hashSet.size() != NUM_LENGTH){
-            hashSet.add(""+pickNumberInRange(NUM_START, NUM_END));
+        LinkedHashSet<String> answerSet = new LinkedHashSet<>();
+        while(answerSet.size() != NUM_LENGTH){
+            answerSet.add(""+pickNumberInRange(NUM_START, NUM_END));
         }
 
         answer = "";
-        for(String val : hashSet){
+        for(String val : answerSet){
             answer += val;
         }
     }
