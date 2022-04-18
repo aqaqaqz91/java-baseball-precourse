@@ -1,5 +1,6 @@
 package baseball;
 
+import baseball.model.Rule;
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -27,8 +28,10 @@ public class UserInputTest extends NsTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"12", "1234"})
+    @ValueSource(strings = {"12", "123", "1234"})
     void 사용자_입력_유효하지_않은_길이(String input) {
+        if(input.length() == Rule.COUNT) return;
+
         assertSimpleTest(() ->
                 assertThatThrownBy(() -> runException(input))
                         .isInstanceOf(IllegalArgumentException.class)

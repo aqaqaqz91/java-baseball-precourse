@@ -3,8 +3,6 @@ package baseball.model;
 import baseball.common.Const;
 
 public class BallCount {
-    private final int MAX_COUNT = 3;
-
     private int strike;
     private int ball;
 
@@ -18,17 +16,17 @@ public class BallCount {
 
         strike = 0;
         ball = 0;
-        for(int i=0;i<MAX_COUNT;i++){
+        for(int i=0;i<Rule.COUNT;i++){
             makeBallCount(input, answer, i);
         }
     }
 
     private boolean userInputValidationCheck(String input){
-        if(input.length() != MAX_COUNT){
+        if(input.length() != Rule.COUNT){
             throw new IllegalArgumentException(Const.INVALID_USER_INPUT_LENGTH);
         }
 
-        if(input.matches("(.*)[^1-9](.*)")){
+        if(input.matches("(.*)[^"+Rule.MIN_NUM+"-"+Rule.MAX_NUM+"](.*)")){
             throw new IllegalArgumentException(Const.INVALID_USER_INPUT_RANGE);
         }
 
@@ -59,6 +57,6 @@ public class BallCount {
     }
 
     public boolean isClear(){
-        return strike == MAX_COUNT;
+        return strike == Rule.COUNT;
     }
 }
